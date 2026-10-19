@@ -1,0 +1,26 @@
+@host = http://localhost:5080
+
+### 1 - Cadastrar
+POST {{host}}/api/folha/cadastrar
+Content-Type: application/json
+
+{
+  "nome": "Ana Souza",
+  "cpf": "123.456.789-00",
+  "mes": 10,
+  "ano": 2025,
+  "horasTrabalhadas": 160,
+  "valorHora": 50
+}
+
+### 2 - Listar
+GET {{host}}/api/folha/listar
+
+### 3 - Buscar
+GET {{host}}/api/folha/buscar/123.456.789-00/10/2025
+
+### 4 - Total líquido
+GET {{host}}/api/folha/total-liquido
+
+### 5 - Remover (execute por último)
+DELETE {{host}}/api/folha/remover/123.456.789-00/10/2025
